@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WeatherApp</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/weatherapp.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="weatherapp.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA81c_SLCGSiBSumQ8cEDHm22MDhwaVrFU&libraries=places&callback=initMap"
+        async defer></script>
+</head>
+<body onload ="getLocation()">
+	<div class="outer">
+		<div class="top">
+			<p id="demo"></p>
+			<div class="searchdiv">
+				<div class="searchform" id="pac-container">
+					<input type="text" class="search" id="pac-input" placeholder="Search for City"
+					onKeyDown="if(event.keyCode==13) fsearch();">
+					<input type="image" src="img/search-icon.svg" alt="Submit Form" class="search_icon" onclick="fsearch()"/>
+					<div id="infowindow-content">
+					    <img src="" id="place-icon" class="location_icon">
+					    <span id="place-name"  class="title"></span><br>
+					    <span id="place-address"></span>
+				    </div>
+				</div>
+			</div>
+			<div class="location">
+				<span class="city"></span>
+				<span class="country"></span>
+			</div>
+			<div class="curloc">
+				<div class="youareat">
+					<img src="img/location-icon.svg" class="location_icon">
+					<span class="Youre-now-at">You're now at</span>
+				</div><br>
+				<div class="curlocation">
+					<span class="curcity"></span>
+					<span class="curcountry"></span>
+				</div><br>
+				<div class="curweather">
+						<span class="curtemp"></span>
+						<span class="curunit"></span>
+						<span class="curwimg"><img class="currentwimg"></span>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="detail">
+				<div class="daydate">
+					<span class="day"></span>
+					<span class="date"></span>
+					<span class="month"></span>
+					<span class="year"></span>
+				</div>
+				<div class="first">
+					<span class="temp"></span>
+					<span class="unit"></span>
+					<span class="wimg"><img class="weatherimage"></span>
+				</div>
+				<div class="fiveday">
+					<div class="day1">
+						<span class="date1"></span><br><br>
+						<span ><img class="img1"></span><br><br>
+						
+						<span class="mxtemp1"></span><br><br>
+						<span class="mntemp1"></span>
+					</div>
+					<div class="day2">
+						<span class="date2"></span><br><br>
+						<span ><img class="img2"></span><br><br>
+						
+						<span class="mxtemp2"></span><br><br>
+						<span class="mntemp2"></span>
+					</div>
+					<div class="day3">
+						<span class="date3"></span><br><br>
+						<span  ><img class="img3"></span><br><br>
+						
+						<span class="mxtemp3"></span><br><br>
+						<span class="mntemp3"></span>
+					</div>
+					<div class="day4">
+						<span class="date4"></span><br><br>
+						<span  ><img class="img4"></span><br><br>
+						
+						<span class="mxtemp4"></span><br><br>
+						<span class="mntemp4"></span>
+					</div>
+					<div class="day5">
+						<span class="date5"></span><br><br>
+						<span  ><img class="img5"></span><br><br>
+						
+						<span class="mxtemp5"></span><br><br>
+						<span class="mntemp5"></span>
+					</div>
+				</div>
+			</div>
+				
+		</div>
+	</div>	
+	<div class="footer">
+		<span class="weavedin">&copy;2017,Weavedin.com</span>
+	</div>			
+</body>
+
+</html>
